@@ -7,4 +7,7 @@ import griffon.metadata.ArtifactProviderFor
 @ArtifactProviderFor(GriffonModel)
 class ConsoleModel {
     @Observable int clickCount = 0
+	String scriptSource
+	@Observable Object scriptResult
+	@Observable boolean enabled = true
 }

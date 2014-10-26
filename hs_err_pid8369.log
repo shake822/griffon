@@ -1,0 +1,609 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x628f6be0, pid=8369, tid=3061287744
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_40-b11) (build 1.8.0_40-ea-b11)
+# Java VM: Java HotSpot(TM) Server VM (25.40-b15 mixed mode linux-x86 )
+# Problematic frame:
+# C  0x628f6be0
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x628f6be0
+
+Registers:
+EAX=0x63cd3ee8, EBX=0xb7787000, ECX=0x00000001, EDX=0x628f6be0
+ESP=0xb677832c, EBP=0x00000003, ESI=0xb6778be8, EDI=0xb77871bc
+EIP=0x628f6be0, EFLAGS=0x00210282, CR2=0x628f6be0
+
+Top of Stack: (sp=0xb677832c)
+0xb677832c:   b7774d56 63cd3ee8 b7750000 b6778b40
+0xb677833c:   b75d76f3 00000000 b77871a4 00000004
+0xb677834c:   b77871a4 b6778b40 003d0f00 b7774cc9
+0xb677835c:   b7787000 b6778b40 003d0f00 b6778428
+0xb677836c:   b7774f83 b6778390 00000000 00000000
+0xb677837c:   00000000 00000000 00000000 00000000
+0xb677838c:   00000000 b7787000 b6778b40 003d0f00
+0xb677839c:   b6778428 2eed9f24 2f750126 00000000 
+
+Instructions: (pc=0x628f6be0)
+0x628f6bc0:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xb]
+
+Register to memory mapping:
+
+EAX=0x63cd3ee8 is an unknown value
+EBX=0xb7787000: <offset 0x19000> in /lib/i386-linux-gnu/libpthread.so.0 at 0xb776e000
+ECX=0x00000001 is an unknown value
+EDX=0x628f6be0 is an unknown value
+ESP=0xb677832c is an unknown value
+EBP=0x00000003 is an unknown value
+ESI=0xb6778be8 is an unknown value
+EDI=0xb77871bc: <offset 0x191bc> in /lib/i386-linux-gnu/libpthread.so.0 at 0xb776e000
+
+
+Stack: [0xb6728000,0xb6779000],  sp=0xb677832c,  free space=320k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x628f6be0
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:at safepoint (shutting down)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0xb6605eb8] Threads_lock - owner thread: 0x64d10400
+
+Heap:
+ PSYoungGen      total 69120K, used 27107K [0x91f80000, 0x96580000, 0xa7000000)
+  eden space 66560K, 36% used [0x91f80000,0x9377ce50,0x96080000)
+  from space 2560K, 99% used [0x96300000,0x9657c080,0x96580000)
+  to   space 2560K, 0% used [0x96080000,0x96080000,0x96300000)
+ ParOldGen       total 43776K, used 15829K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 36% used [0x67e00000,0x68d75418,0x6a8c0000)
+ Metaspace       used 14836K, capacity 15068K, committed 15128K, reserved 15664K
+
+Card table byte_map: [0x67c06000,0x67e00000] byte_map_base: 0x678c7000
+
+Marking Bits: (ParMarkBitMap*) 0xb718e4c0
+ Begin Bits: [0x65870000, 0x66838000)
+ End Bits:   [0x66838000, 0x67800000)
+
+Polling page: 0xb7793000
+
+CodeCache: size=245760Kb used=6176Kb max_used=6215Kb free=239583Kb
+ bounds [0xa7590000, 0xa7ba8000, 0xb6590000]
+ total_blobs=2487 nmethods=1978 adapters=424
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 6.425 Thread 0x64d33400 nmethod 1936 0xa7b85448 code [0xa7b86060, 0xa7b8ddbc]
+Event: 6.425 Thread 0x64d33400 1951       4       java.lang.StringBuilder::append (8 bytes)
+Event: 6.432 Thread 0x64d33400 nmethod 1951 0xa7b61848 code [0xa7b61980, 0xa7b61d1c]
+Event: 6.432 Thread 0x64d33400 1962       4       java.util.HashMap::hash (20 bytes)
+Event: 6.433 Thread 0x64d33400 nmethod 1962 0xa7b621c8 code [0xa7b622c0, 0xa7b62350]
+Event: 6.433 Thread 0x64d33400 1984       4       org.codehaus.groovy.reflection.ParameterTypes::getParameterTypes (16 bytes)
+Event: 6.446 Thread 0x64d35000 1992       3       java.util.logging.LogManager$LoggerContext::getRootLogger (8 bytes)
+Event: 6.447 Thread 0x64d35000 nmethod 1992 0xa7b64d08 code [0xa7b64e20, 0xa7b64f80]
+Event: 6.447 Thread 0x64d35000 1993       3       java.util.logging.LogManager$LoggerContext::getGlobalLogger (6 bytes)
+Event: 6.447 Thread 0x64d35000 nmethod 1993 0xa7b64a88 code [0xa7b64ba0, 0xa7b64c80]
+
+GC Heap History (8 events):
+Event: 0.841 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 19200K, used 16640K [0x91f80000, 0x934c0000, 0xa7000000)
+  eden space 16640K, 100% used [0x91f80000,0x92fc0000,0x92fc0000)
+  from space 2560K, 0% used [0x93240000,0x93240000,0x934c0000)
+  to   space 2560K, 0% used [0x92fc0000,0x92fc0000,0x93240000)
+ ParOldGen       total 43776K, used 0K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 0% used [0x67e00000,0x67e00000,0x6a8c0000)
+ Metaspace       used 5768K, capacity 5885K, committed 5912K, reserved 6448K
+Event: 0.853 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 19200K, used 2548K [0x91f80000, 0x94500000, 0xa7000000)
+  eden space 16640K, 0% used [0x91f80000,0x91f80000,0x92fc0000)
+  from space 2560K, 99% used [0x92fc0000,0x9323d108,0x93240000)
+  to   space 2560K, 0% used [0x94280000,0x94280000,0x94500000)
+ ParOldGen       total 43776K, used 645K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 1% used [0x67e00000,0x67ea1688,0x6a8c0000)
+ Metaspace       used 5768K, capacity 5885K, committed 5912K, reserved 6448K
+}
+Event: 1.563 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 19200K, used 19188K [0x91f80000, 0x94500000, 0xa7000000)
+  eden space 16640K, 100% used [0x91f80000,0x92fc0000,0x92fc0000)
+  from space 2560K, 99% used [0x92fc0000,0x9323d108,0x93240000)
+  to   space 2560K, 0% used [0x94280000,0x94280000,0x94500000)
+ ParOldGen       total 43776K, used 645K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 1% used [0x67e00000,0x67ea1688,0x6a8c0000)
+ Metaspace       used 7663K, capacity 7786K, committed 7832K, reserved 8496K
+Event: 1.582 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 35840K, used 2544K [0x91f80000, 0x94500000, 0xa7000000)
+  eden space 33280K, 0% used [0x91f80000,0x91f80000,0x94000000)
+  from space 2560K, 99% used [0x94280000,0x944fc040,0x94500000)
+  to   space 2560K, 0% used [0x94000000,0x94000000,0x94280000)
+ ParOldGen       total 43776K, used 2910K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 6% used [0x67e00000,0x680d7bc0,0x6a8c0000)
+ Metaspace       used 7663K, capacity 7786K, committed 7832K, reserved 8496K
+}
+Event: 3.117 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 35840K, used 35824K [0x91f80000, 0x94500000, 0xa7000000)
+  eden space 33280K, 100% used [0x91f80000,0x94000000,0x94000000)
+  from space 2560K, 99% used [0x94280000,0x944fc040,0x94500000)
+  to   space 2560K, 0% used [0x94000000,0x94000000,0x94280000)
+ ParOldGen       total 43776K, used 2910K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 6% used [0x67e00000,0x680d7bc0,0x6a8c0000)
+ Metaspace       used 11072K, capacity 11240K, committed 11288K, reserved 11568K
+Event: 3.151 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 35840K, used 2544K [0x91f80000, 0x96580000, 0xa7000000)
+  eden space 33280K, 0% used [0x91f80000,0x91f80000,0x94000000)
+  from space 2560K, 99% used [0x94000000,0x9427c060,0x94280000)
+  to   space 2560K, 0% used [0x96300000,0x96300000,0x96580000)
+ ParOldGen       total 43776K, used 8909K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 20% used [0x67e00000,0x686b3740,0x6a8c0000)
+ Metaspace       used 11072K, capacity 11240K, committed 11288K, reserved 11568K
+}
+Event: 4.635 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 35840K, used 35824K [0x91f80000, 0x96580000, 0xa7000000)
+  eden space 33280K, 100% used [0x91f80000,0x94000000,0x94000000)
+  from space 2560K, 99% used [0x94000000,0x9427c060,0x94280000)
+  to   space 2560K, 0% used [0x96300000,0x96300000,0x96580000)
+ ParOldGen       total 43776K, used 8909K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 20% used [0x67e00000,0x686b3740,0x6a8c0000)
+ Metaspace       used 13770K, capacity 13972K, committed 13976K, reserved 14640K
+Event: 4.740 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 69120K, used 2544K [0x91f80000, 0x96580000, 0xa7000000)
+  eden space 66560K, 0% used [0x91f80000,0x91f80000,0x96080000)
+  from space 2560K, 99% used [0x96300000,0x9657c080,0x96580000)
+  to   space 2560K, 0% used [0x96080000,0x96080000,0x96300000)
+ ParOldGen       total 43776K, used 15829K [0x67e00000, 0x6a8c0000, 0x91f80000)
+  object space 43776K, 36% used [0x67e00000,0x68d75418,0x6a8c0000)
+ Metaspace       used 13770K, capacity 13972K, committed 13976K, reserved 14640K
+}
+
+Deoptimization events (10 events):
+Event: 4.505 Thread 0xb6608800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0xa7ae93b8 method=org.codehaus.groovy.runtime.metaclass.MetaMethodIndex.addMethodToList(Ljava/lang/Object;Lgroovy/lang/MetaMethod;)Ljava/lang/Object; @ 91
+Event: 4.505 Thread 0xb6608800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0xa7ae93b8 method=org.codehaus.groovy.runtime.metaclass.MetaMethodIndex.addMethodToList(Ljava/lang/Object;Lgroovy/lang/MetaMethod;)Ljava/lang/Object; @ 91
+Event: 5.129 Thread 0x62a24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0xa7a67dd4 method=java.lang.ThreadLocal.get()Ljava/lang/Object; @ 11
+Event: 5.181 Thread 0x62a24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0xa77c3754 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 5.182 Thread 0x62a24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0xa77b96b8 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 5.296 Thread 0x62a24000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0xa7ae93b8 method=org.codehaus.groovy.runtime.metaclass.MetaMethodIndex.addMethodToList(Ljava/lang/Object;Lgroovy/lang/MetaMethod;)Ljava/lang/Object; @ 91
+Event: 5.296 Thread 0x62a24000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0xa7ae93b8 method=org.codehaus.groovy.runtime.metaclass.MetaMethodIndex.addMethodToList(Ljava/lang/Object;Lgroovy/lang/MetaMethod;)Ljava/lang/Object; @ 91
+Event: 5.401 Thread 0x62a24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0xa7ae2110 method=java.util.HashMap.resize()[Ljava/util/HashMap$Node; @ 206
+Event: 5.402 Thread 0x62a24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0xa7904a3c method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+Event: 5.402 Thread 0x62a24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0xa7ae0c3c method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 84
+
+Internal exceptions (10 events):
+Event: 5.432 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/lang/CloneableCustomizer> (0x9353e470) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.432 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/lang/RunnableBeanInfo> (0x93547de8) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.433 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/lang/RunnableCustomizer> (0x9354b170) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.433 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/GroovyCallableBeanInfo> (0x93558cf0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.434 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/GroovyCallableCustomizer> (0x9355f6c8) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.434 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/util/concurrent/CallableBeanInfo> (0x93569f38) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.435 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/util/concurrent/CallableCustomizer> (0x9356d9d0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.435 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/io/SerializableBeanInfo> (0x93577f78) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.435 Thread 0x62a24000 Exception <a 'java/lang/ClassNotFoundException': java/io/SerializableCustomizer> (0x9357b3e8) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 211]
+Event: 5.436 Thread 0x62a24000 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x9357bdf0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u40/1826.nc/hotspot/src/share/vm/runtime/reflection.cpp, line 1080]
+
+Events (10 events):
+Event: 6.446 loading class java/util/IdentityHashMap$KeyIterator done
+Event: 6.446 Thread 0x62a23800 Thread added: 0x62a23800
+Event: 6.447 Thread 0x62a23c00 Thread added: 0x62a23c00
+Event: 6.447 Thread 0x62a23800 Thread exited: 0x62a23800
+Event: 6.447 loading class sun/awt/X11/XSystemTrayPeer
+Event: 6.448 loading class java/awt/peer/SystemTrayPeer
+Event: 6.448 loading class java/awt/peer/SystemTrayPeer done
+Event: 6.448 loading class sun/awt/X11/XSystemTrayPeer done
+Event: 6.449 Thread 0xb6608800 Thread exited: 0xb6608800
+Event: 6.450 Thread 0x64d31c00 Thread exited: 0x64d31c00
+
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 08:04 6168565    /home/zhaoqunqi/software/java/jdk1.8.0_40/bin/java
+08049000-0804a000 rw-p 00000000 08:04 6168565    /home/zhaoqunqi/software/java/jdk1.8.0_40/bin/java
+089e8000-09345000 rw-p 00000000 00:00 0          [heap]
+62700000-627a1000 rw-p 00000000 00:00 0 
+627a1000-62800000 ---p 00000000 00:00 0 
+62900000-62a00000 rw-p 00000000 00:00 0 
+62a00000-62a55000 rw-p 00000000 00:00 0 
+62a55000-62b00000 ---p 00000000 00:00 0 
+62b3c000-62bbc000 rw-p 00000000 00:00 0 
+62bbc000-62c3c000 ---p 00000000 00:00 0 
+62d00000-62e00000 rw-p 00000000 00:00 0 
+62e50000-62e53000 ---p 00000000 00:00 0 
+62e53000-62ea1000 rw-p 00000000 00:00 0 
+62f54000-63054000 rw-p 00000000 00:00 0 
+63054000-6305c000 r--s 00000000 08:04 6553701    /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-4
+6305c000-63060000 r--s 00000000 08:04 6558623    /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-4
+63100000-631f8000 rw-p 00000000 00:00 0 
+631f8000-63200000 ---p 00000000 00:00 0 
+63202000-63203000 r--s 00000000 08:04 6558625    /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-4
+63203000-63208000 r--s 00000000 08:04 6558511    /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-4
+63208000-63217000 r--s 00000000 08:04 6558510    /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le32d4.cache-4
+63217000-6321a000 r--s 00000000 08:04 6558256    /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-4
+6321a000-6321e000 r--s 00000000 08:04 6557983    /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-4
+6321e000-6322e000 r--s 00000000 08:04 6557488    /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-4
+6322e000-63231000 ---p 00000000 00:00 0 
+63231000-6337f000 rw-p 00000000 00:00 0          [stack:8395]
+6337f000-63382000 ---p 00000000 00:00 0 
+63382000-633d0000 rw-p 00000000 00:00 0          [stack:8389]
+633d0000-633d3000 ---p 00000000 00:00 0 
+633d3000-63421000 rw-p 00000000 00:00 0          [stack:8388]
+63421000-63422000 r--s 00000000 08:04 6558585    /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-4
+63422000-63423000 r--s 00000000 08:04 6558584    /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-4
+63423000-63428000 r--s 00000000 08:04 6557982    /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-4
+63428000-6342c000 r--s 00000000 08:04 6557965    /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-4
+63471000-63480000 r-xp 00000000 08:04 6168678    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libnio.so
+63480000-63481000 rw-p 0000e000 08:04 6168678    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libnio.so
+63481000-63496000 r-xp 00000000 08:04 6168712    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libnet.so
+63496000-63497000 rw-p 00014000 08:04 6168712    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libnet.so
+63497000-634b3000 r-xp 00000000 08:04 4063261    /lib/i386-linux-gnu/libgcc_s.so.1
+634b3000-634b4000 rw-p 0001b000 08:04 4063261    /lib/i386-linux-gnu/libgcc_s.so.1
+634b4000-63514000 r-xp 00000000 08:04 6168688    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libfontmanager.so
+63514000-63516000 rw-p 00060000 08:04 6168688    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libfontmanager.so
+63516000-6361b000 rw-p 00000000 00:00 0 
+6361b000-6374b000 r-xp 00000000 08:04 1447101    /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+6374b000-6374c000 r--p 00130000 08:04 1447101    /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+6374c000-6374e000 rw-p 00131000 08:04 1447101    /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+6374e000-6374f000 rw-p 00000000 00:00 0 
+6374f000-637d5000 r-xp 00000000 08:04 6168671    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libawt.so
+637d5000-637dc000 rw-p 00086000 08:04 6168671    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libawt.so
+637dc000-63800000 rw-p 00000000 00:00 0 
+63800000-638fb000 rw-p 00000000 00:00 0 
+638fb000-63900000 ---p 00000000 00:00 0 
+63900000-63904000 r-xp 00000000 08:04 1447120    /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+63904000-63905000 r--p 00003000 08:04 1447120    /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+63905000-63906000 rw-p 00004000 08:04 1447120    /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+63906000-6390f000 r-xp 00000000 08:04 1447112    /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+6390f000-63910000 r--p 00008000 08:04 1447112    /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+63910000-63911000 rw-p 00009000 08:04 1447112    /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+63911000-63912000 r--s 00000000 08:04 6558474    /var/cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le32d4.cache-4
+63912000-63913000 r--s 00000000 08:04 6558252    /var/cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le32d4.cache-4
+63913000-6391a000 r--s 00000000 08:04 6557699    /var/cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le32d4.cache-4
+6391a000-6391d000 r--s 00000000 08:04 6557602    /var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le32d4.cache-4
+6391d000-63926000 r--s 00000000 08:04 6562851    /var/cache/fontconfig/089dead882dea3570ffc31a9898cfb69-le32d4.cache-4
+63926000-6392d000 r--s 00000000 08:04 1451373    /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+6392d000-6394d000 r-xp 00000000 08:04 1448169    /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+6394d000-6394e000 r--p 0001f000 08:04 1448169    /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+6394e000-6394f000 rw-p 00020000 08:04 1448169    /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+6394f000-6395e000 r-xp 00000000 08:04 1447126    /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+6395e000-6395f000 r--p 0000e000 08:04 1447126    /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+6395f000-63960000 rw-p 0000f000 08:04 1447126    /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+63960000-639ac000 r-xp 00000000 08:04 6168684    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libawt_xawt.so
+639ac000-639ae000 rw-p 0004c000 08:04 6168684    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libawt_xawt.so
+639ae000-639af000 rw-p 00000000 00:00 0 
+639af000-639b2000 ---p 00000000 00:00 0 
+639b2000-63b00000 rw-p 00000000 00:00 0          [stack:8387]
+63b00000-63bfd000 rw-p 00000000 00:00 0 
+63bfd000-63c00000 ---p 00000000 00:00 0 
+63c00000-63cee000 rw-p 00000000 00:00 0 
+63cee000-63d00000 ---p 00000000 00:00 0 
+63d00000-63e00000 rw-p 00000000 00:00 0 
+63e00000-63f00000 rw-p 00000000 00:00 0 
+63f00000-64000000 rw-p 00000000 00:00 0 
+64000000-64100000 rw-p 00000000 00:00 0 
+64100000-64200000 rw-p 00000000 00:00 0 
+64200000-642fb000 rw-p 00000000 00:00 0 
+642fb000-64300000 ---p 00000000 00:00 0 
+64300000-64400000 rw-p 00000000 00:00 0 
+64400000-644fe000 rw-p 00000000 00:00 0 
+644fe000-64500000 ---p 00000000 00:00 0 
+64500000-64502000 r--s 00000000 08:04 6557487    /var/cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le32d4.cache-4
+64502000-64507000 r-xp 00000000 08:04 1447116    /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+64507000-64508000 r--p 00004000 08:04 1447116    /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+64508000-64509000 rw-p 00005000 08:04 1447116    /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+64509000-6451a000 r-xp 00000000 08:04 1447118    /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+6451a000-6451b000 r--p 00010000 08:04 1447118    /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+6451b000-6451c000 rw-p 00011000 08:04 1447118    /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+6451c000-6451d000 r--s 00000000 08:04 6557986    /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-4
+6451d000-64531000 r--p 00000000 08:04 1842350    /usr/share/locale-langpack/zh_CN/LC_MESSAGES/libc.mo
+64531000-64544000 r--s 00344000 08:04 6168730    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/resources.jar
+64544000-64547000 ---p 00000000 00:00 0 
+64547000-64595000 rw-p 00000000 00:00 0          [stack:8386]
+64595000-64600000 r--s 00685000 08:04 786764     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.3.7/feb6df9c6936c797159091a451ed8590d67101dc/groovy-all-2.3.7.jar
+64600000-646fb000 rw-p 00000000 00:00 0 
+646fb000-64700000 ---p 00000000 00:00 0 
+64700000-64701000 r--s 00000000 08:04 6557981    /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-4
+64701000-64702000 r--s 00000000 08:04 6557980    /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-4
+64702000-64703000 r--s 00000000 08:04 6557599    /var/cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le32d4.cache-4
+64703000-64705000 r--s 00000000 08:04 6553696    /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-4
+64705000-64707000 r-xp 00000000 08:04 1447105    /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+64707000-64708000 r--p 00001000 08:04 1447105    /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+64708000-64709000 rw-p 00002000 08:04 1447105    /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+64709000-64725000 r--s 00393000 08:04 6684909    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/ext/cldrdata.jar
+64725000-64726000 ---p 00000000 00:00 0 
+64726000-647a6000 rw-p 00000000 00:00 0 
+647a6000-647a9000 ---p 00000000 00:00 0 
+647a9000-647f7000 rw-p 00000000 00:00 0          [stack:8384]
+647f7000-647fa000 ---p 00000000 00:00 0 
+647fa000-64878000 rw-p 00000000 00:00 0          [stack:8383]
+64878000-6487b000 ---p 00000000 00:00 0 
+6487b000-648f9000 rw-p 00000000 00:00 0          [stack:8382]
+648f9000-648fc000 ---p 00000000 00:00 0 
+648fc000-6494a000 rw-p 00000000 00:00 0 
+6494a000-64aaf000 r--p 001c8000 08:04 1450231    /usr/lib/locale/locale-archive
+64aaf000-64caf000 r--p 00000000 08:04 1450231    /usr/lib/locale/locale-archive
+64caf000-64cb2000 ---p 00000000 00:00 0 
+64cb2000-64d00000 rw-p 00000000 00:00 0          [stack:8380]
+64d00000-64e00000 rw-p 00000000 00:00 0 
+64e00000-64e03000 r--s 00000000 08:04 6562901    /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-4
+64e03000-64e08000 r-xp 00000000 08:04 1447146    /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+64e08000-64e09000 r--p 00004000 08:04 1447146    /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+64e09000-64e0a000 rw-p 00005000 08:04 1447146    /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+64e0a000-64e0d000 ---p 00000000 00:00 0 
+64e0d000-64e5b000 rw-p 00000000 00:00 0          [stack:8379]
+64e5b000-65032000 r--s 03cfa000 08:04 6168736    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/rt.jar
+65032000-65478000 rw-p 00000000 00:00 0 
+65478000-6547e000 ---p 00000000 00:00 0 
+6547e000-67800000 rw-p 00000000 00:00 0 
+67800000-678fd000 rw-p 00000000 00:00 0 
+678fd000-67900000 ---p 00000000 00:00 0 
+67900000-67909000 r-xp 00000000 08:04 1447140    /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+67909000-6790a000 r--p 00008000 08:04 1447140    /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+6790a000-6790b000 rw-p 00009000 08:04 1447140    /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+6790b000-67910000 r--s 002f8000 08:04 6168724    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/charsets.jar
+67910000-6791a000 r--s 00116000 08:04 6684913    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/ext/localedata.jar
+6791a000-67921000 r--s 0003e000 08:04 786766     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu.inject/cglib/2.2.1-v20090111/7ce5e983fd0e6c78346f4c9cbfa39d83049dda2/cglib-2.2.1-v20090111.jar
+67921000-67930000 r--s 0009f000 08:04 786760     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9d84f15fe35e2c716a02979fb62f50a29f38aefa/guice-3.0.jar
+67930000-67931000 ---p 00000000 00:00 0 
+67931000-67a00000 rw-p 00000000 00:00 0 
+67a00000-67a21000 rw-p 00000000 00:00 0 
+67a21000-67b00000 ---p 00000000 00:00 0 
+67b00000-67b02000 r--s 00000000 08:04 786765     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar
+67b02000-67b04000 r--s 00006000 08:04 786763     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar
+67b04000-67b05000 ---p 00000000 00:00 0 
+67b05000-67b85000 rw-p 00000000 00:00 0          [stack:8377]
+67b85000-67b86000 ---p 00000000 00:00 0 
+67b86000-67c1c000 rw-p 00000000 00:00 0          [stack:8376]
+67c1c000-67d56000 ---p 00000000 00:00 0 
+67d56000-67d7a000 rw-p 00000000 00:00 0 
+67d7a000-67dff000 ---p 00000000 00:00 0 
+67dff000-6a8c0000 rw-p 00000000 00:00 0 
+6a8c0000-91f80000 ---p 00000000 00:00 0 
+91f80000-96580000 rw-p 00000000 00:00 0 
+96580000-a7000000 ---p 00000000 00:00 0 
+a7000000-a7003000 r--s 00006000 08:04 786762     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar
+a7003000-a700c000 r--s 0006f000 08:04 786835     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar
+a700c000-a7095000 rw-p 00000000 00:00 0 
+a7095000-a71d0000 ---p 00000000 00:00 0 
+a71d0000-a71e9000 rw-p 00000000 00:00 0 
+a71e9000-a7590000 ---p 00000000 00:00 0 
+a7590000-a7ba8000 rwxp 00000000 00:00 0 
+a7ba8000-b6590000 ---p 00000000 00:00 0 
+b6590000-b65a9000 r-xp 00000000 08:04 6168714    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libzip.so
+b65a9000-b65aa000 rw-p 00018000 08:04 6168714    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libzip.so
+b65aa000-b65b5000 r-xp 00000000 08:04 4063263    /lib/i386-linux-gnu/libnss_files-2.19.so
+b65b5000-b65b6000 r--p 0000a000 08:04 4063263    /lib/i386-linux-gnu/libnss_files-2.19.so
+b65b6000-b65b7000 rw-p 0000b000 08:04 4063263    /lib/i386-linux-gnu/libnss_files-2.19.so
+b65b7000-b65c1000 r-xp 00000000 08:04 4063330    /lib/i386-linux-gnu/libnss_nis-2.19.so
+b65c1000-b65c2000 r--p 00009000 08:04 4063330    /lib/i386-linux-gnu/libnss_nis-2.19.so
+b65c2000-b65c3000 rw-p 0000a000 08:04 4063330    /lib/i386-linux-gnu/libnss_nis-2.19.so
+b65c3000-b65d8000 r-xp 00000000 08:04 4063327    /lib/i386-linux-gnu/libnsl-2.19.so
+b65d8000-b65d9000 r--p 00015000 08:04 4063327    /lib/i386-linux-gnu/libnsl-2.19.so
+b65d9000-b65da000 rw-p 00016000 08:04 4063327    /lib/i386-linux-gnu/libnsl-2.19.so
+b65da000-b65dc000 rw-p 00000000 00:00 0 
+b65dc000-b65ff000 r-xp 00000000 08:04 6168709    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libjava.so
+b65ff000-b6600000 rw-p 00023000 08:04 6168709    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libjava.so
+b6600000-b66fa000 rw-p 00000000 00:00 0 
+b66fa000-b6700000 ---p 00000000 00:00 0 
+b6700000-b6701000 r--s 0000a000 08:04 786767     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/asm/asm/3.1/c157def142714c544bdea2e6144645702adf7097/asm-3.1.jar
+b6701000-b6708000 r-xp 00000000 08:04 4063322    /lib/i386-linux-gnu/libnss_compat-2.19.so
+b6708000-b6709000 r--p 00006000 08:04 4063322    /lib/i386-linux-gnu/libnss_compat-2.19.so
+b6709000-b670a000 rw-p 00007000 08:04 4063322    /lib/i386-linux-gnu/libnss_compat-2.19.so
+b670a000-b670b000 r--s 00000000 08:04 786761     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar
+b670b000-b670d000 r--s 00001000 08:04 786836     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.7/58f588119ffd1702c77ccab6acb54bfb41bed8bd/slf4j-log4j12-1.7.7.jar
+b670d000-b6717000 r--s 00059000 08:04 786756     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core/2.0.0/f1371a8185f915453af7d7fa14b68b901d84d3de/griffon-core-2.0.0.jar
+b6717000-b671f000 rw-s 00000000 08:04 1048697    /tmp/hsperfdata_zhaoqunqi/8369 (deleted)
+b671f000-b6726000 r-xp 00000000 08:04 4063326    /lib/i386-linux-gnu/librt-2.19.so
+b6726000-b6727000 r--p 00006000 08:04 4063326    /lib/i386-linux-gnu/librt-2.19.so
+b6727000-b6728000 rw-p 00007000 08:04 4063326    /lib/i386-linux-gnu/librt-2.19.so
+b6728000-b672b000 ---p 00000000 00:00 0 
+b672b000-b6779000 rw-p 00000000 00:00 0          [stack:8375]
+b6779000-b67bd000 r-xp 00000000 08:04 4063328    /lib/i386-linux-gnu/libm-2.19.so
+b67bd000-b67be000 r--p 00043000 08:04 4063328    /lib/i386-linux-gnu/libm-2.19.so
+b67be000-b67bf000 rw-p 00044000 08:04 4063328    /lib/i386-linux-gnu/libm-2.19.so
+b67bf000-b7111000 r-xp 00000000 08:04 6564952    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/server/libjvm.so
+b7111000-b717d000 rw-p 00951000 08:04 6564952    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/server/libjvm.so
+b717d000-b75a4000 rw-p 00000000 00:00 0 
+b75a4000-b774d000 r-xp 00000000 08:04 4063333    /lib/i386-linux-gnu/libc-2.19.so
+b774d000-b774e000 ---p 001a9000 08:04 4063333    /lib/i386-linux-gnu/libc-2.19.so
+b774e000-b7750000 r--p 001a9000 08:04 4063333    /lib/i386-linux-gnu/libc-2.19.so
+b7750000-b7751000 rw-p 001ab000 08:04 4063333    /lib/i386-linux-gnu/libc-2.19.so
+b7751000-b7754000 rw-p 00000000 00:00 0 
+b7754000-b7757000 r-xp 00000000 08:04 4067629    /lib/i386-linux-gnu/libdl-2.19.so
+b7757000-b7758000 r--p 00002000 08:04 4067629    /lib/i386-linux-gnu/libdl-2.19.so
+b7758000-b7759000 rw-p 00003000 08:04 4067629    /lib/i386-linux-gnu/libdl-2.19.so
+b7759000-b776d000 r-xp 00000000 08:04 5906971    /home/zhaoqunqi/software/java/jdk1.8.0_40/lib/i386/jli/libjli.so
+b776d000-b776e000 rw-p 00013000 08:04 5906971    /home/zhaoqunqi/software/java/jdk1.8.0_40/lib/i386/jli/libjli.so
+b776e000-b7786000 r-xp 00000000 08:04 4067513    /lib/i386-linux-gnu/libpthread-2.19.so
+b7786000-b7787000 r--p 00017000 08:04 4067513    /lib/i386-linux-gnu/libpthread-2.19.so
+b7787000-b7788000 rw-p 00018000 08:04 4067513    /lib/i386-linux-gnu/libpthread-2.19.so
+b7788000-b778b000 rw-p 00000000 00:00 0 
+b778b000-b778d000 r--s 00010000 08:04 786759     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-groovy/2.0.0/6a4d48a2a30b7f770c1018898e05ca2ed5291d90/griffon-groovy-2.0.0.jar
+b778d000-b778e000 r--s 00004000 08:04 786758     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-swing-groovy/2.0.0/2be83796b9128d50ad16c4f2efd9d721d430b137/griffon-swing-groovy-2.0.0.jar
+b778e000-b7791000 r--s 00019000 08:04 786757     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-swing/2.0.0/cebe0e7be35a10a529fa41c3b899898b757fed78/griffon-swing-2.0.0.jar
+b7791000-b7792000 r--s 00004000 08:04 786755     /home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-guice/2.0.0/928ce9f5b6521507bceffa42aa74eb214cc374d/griffon-guice-2.0.0.jar
+b7792000-b7793000 rw-p 00000000 00:00 0 
+b7793000-b7794000 ---p 00000000 00:00 0 
+b7794000-b779f000 r-xp 00000000 08:04 6168670    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libverify.so
+b779f000-b77a0000 rw-p 0000b000 08:04 6168670    /home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/libverify.so
+b77a0000-b77a2000 rw-p 00000000 00:00 0 
+b77a2000-b77a3000 r-xp 00000000 00:00 0          [vdso]
+b77a3000-b77c3000 r-xp 00000000 08:04 4067628    /lib/i386-linux-gnu/ld-2.19.so
+b77c3000-b77c4000 r--p 0001f000 08:04 4067628    /lib/i386-linux-gnu/ld-2.19.so
+b77c4000-b77c5000 rw-p 00020000 08:04 4067628    /lib/i386-linux-gnu/ld-2.19.so
+bfa44000-bfa45000 rwxp 00000000 00:00 0 
+bfa76000-bfa98000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: com.shake.Launcher
+java_class_path (initial): /home/zhaoqunqi/griffon/console/build/classes/main:/home/zhaoqunqi/griffon/console/build/resources/main:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-guice/2.0.0/928ce9f5b6521507bceffa42aa74eb214cc374d/griffon-guice-2.0.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core/2.0.0/f1371a8185f915453af7d7fa14b68b901d84d3de/griffon-core-2.0.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-swing/2.0.0/cebe0e7be35a10a529fa41c3b899898b757fed78/griffon-swing-2.0.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-swing-groovy/2.0.0/2be83796b9128d50ad16c4f2efd9d721d430b137/griffon-swing-groovy-2.0.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-groovy/2.0.0/6a4d48a2a30b7f770c1018898e05ca2ed5291d90/griffon-groovy-2.0.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.7/58f588119ffd1702c77ccab6acb54bfb41bed8bd/slf4j-log4j12-1.7.7.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9d84f15fe35e2c716a02979fb62f50a29f38aefa/guice-3.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.3.7/feb6df9c6936c797159091a451ed8590d67101dc/groovy-all-2.3.7.jar:/home/zhaoqunqi/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b4
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+LD_LIBRARY_PATH=/home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386/server:/home/zhaoqunqi/software/java/jdk1.8.0_40/jre/lib/i386:/home/zhaoqunqi/software/java/jdk1.8.0_40/jre/../lib/i386:/home/zhaoqunqi/software/grails/ggts-3.6.1.RELEASE/jre/lib/i386/client:/home/zhaoqunqi/software/grails/ggts-3.6.1.RELEASE/jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x8a3950], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x8a3950], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x727200], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x727200], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x727200], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x727200], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x728770], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x7297b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x7297b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x7297b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x7297b0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=14.04
+DISTRIB_CODENAME=trusty
+DISTRIB_DESCRIPTION="Ubuntu 14.04.1 LTS"
+
+uname:Linux 3.13.0-37-generic #64-Ubuntu SMP Mon Sep 22 21:30:01 UTC 2014 i686
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 32118, NOFILE 4096, AS infinity
+load average:1.02 1.02 0.94
+
+/proc/meminfo:
+MemTotal:        4130300 kB
+MemFree:          296664 kB
+Buffers:           24996 kB
+Cached:           366344 kB
+SwapCached:        10864 kB
+Active:          2575736 kB
+Inactive:        1018760 kB
+Active(anon):    2398856 kB
+Inactive(anon):   843724 kB
+Active(file):     176880 kB
+Inactive(file):   175036 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+HighTotal:       3280616 kB
+HighFree:         117432 kB
+LowTotal:         849684 kB
+LowFree:          179232 kB
+SwapTotal:       3998716 kB
+SwapFree:        3948776 kB
+Dirty:               876 kB
+Writeback:             0 kB
+AnonPages:       3192484 kB
+Mapped:           233008 kB
+Shmem:             39424 kB
+Slab:              73164 kB
+SReclaimable:      50032 kB
+SUnreclaim:        23132 kB
+KernelStack:        6056 kB
+PageTables:        18944 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6063864 kB
+Committed_AS:    7967516 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       22980 kB
+VmallocChunk:      47684 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1984512 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       18424 kB
+DirectMap2M:      894976 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Core(TM)2 Duo CPU     T6600  @ 2.20GHz
+stepping	: 10
+microcode	: 0xa07
+cpu MHz		: 2200.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm dtherm
+bogomips	: 4398.97
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Core(TM)2 Duo CPU     T6600  @ 2.20GHz
+stepping	: 10
+microcode	: 0xa07
+cpu MHz		: 2200.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm dtherm
+bogomips	: 4398.97
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 4130300k(296664k free), swap 3998716k(3948776k free)
+
+vm_info: Java HotSpot(TM) Server VM (25.40-b15) for linux-x86 JRE (1.8.0_40-ea-b11), built on Oct 21 2014 23:27:05 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Sun Oct 26 22:32:16 2014
+elapsed time: 6 seconds (0d 0h 0m 6s)
+
